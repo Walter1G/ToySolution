@@ -34,7 +34,33 @@ function assignGrade(e) {
 }
 
 //add event listener to call getSpeedstatus when the button is clicked
+speedStatusbtn.addEventListener("click",getSpeedStatus);
 
 function getSpeedStatus(e){
+
+    let demeritPoints=0;
+
+    const carSpeed = parseFloat(document.getElementById("carSpeedtxt").value);
+    document.getElementById("speedStatusTxt").value = "OK";
+    document.getElementById("speedStatusTxt").style.backgroundColor = "Aquamarine";
+
+    if(carSpeed>70){        
+    
+
+        let excessLimit = carSpeed-70;
+        demeritPoints = Math.ceil(excessLimit/5);
+        document.getElementById("dimerittxt").value=demeritPoints;
+        
+
+        if(demeritPoints >12){
+            document.getElementById("speedStatusTxt").value = "License suspended";
+            document.getElementById("speedStatusTxt").style.backgroundColor = "Red";
+
+        }
+
+
+
+
+    }
 
 }
