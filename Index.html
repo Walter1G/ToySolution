@@ -21,9 +21,9 @@
                  <label for="marks">Student's Marks: </label>
                  <input id="markstxt" name="marks" type="number" min="100"  placeholder="Enter students marks">
 
-                 <button id="gradebtn" style="margin-left: 40px;"  type="submit">Check GRADE</button>
+                 <button id="gradebtn"   type="submit">Check GRADE</button>
  
-                 <label style="margin-left: 40px;" for="grade">Grade: </label>
+                 <label  for="grade">Grade: </label>
                  <input type="text" name="grade" disabled id="gradetxt">             
                  
                  
@@ -34,14 +34,14 @@
         <section>
             <h2>Speed Detector</h2>
             <fieldset>           
-                <legend><abbr title="Speed Detector">SD</abbr></legend>
+                <legend><abbr style="margin: 0%;" title="Speed Detector">SD</abbr></legend>
                 <label for="carSpeedtxt">Car speed: </label>
                 <input id="carSpeedtxt"  type="number"> 
                 
-                <button style="margin-left: 40px;" id="statusBtn">Check Status</button>
-                <label style="margin-left: 40px;" for="speedStatusTxt">Licence Status: </label>
+                <button  id="statusBtn">Check Status</button>
+                <label  for="speedStatusTxt">Licence Status: </label>
                 <input type="text" disabled id="speedStatusTxt">
-                <label style="margin-left: 40px;" for="dimerittxt">Demerit Points: </label>
+                <label  for="dimerittxt">Demerit Points: </label>
                 <input type="text" value="0" disabled id="dimerittxt">
 
 
@@ -52,9 +52,25 @@
         
 
         <section>
-            <h2>Salary Calculator</h2>
+            <h2>Monthly Net Salary Calculator</h2>
             <fieldset>             
-                <legend><abbr title="Net Salary Calculator">NSC</abbr></legend>
+                <legend><abbr style="margin: 0%;" title="Net Salary Calculator">NSC</abbr></legend>
+                <label for="basicSalary">Basic Salary: </label>
+                <input type="number" id="basicSalary">
+                <label for="benefitsSum">Sum of Benefits/ Allowances: </label>
+                <input type="number"  id="benefitsSum">
+                <label for="grossIncome">Gross Income: </label>
+                <label for="reliefs">Sum of Relief</label>
+                <input type="number" placeholder="include NSSF, NHIF e.t.c" id="reliefs">
+                <input type="text" disabled id="grossIncome">
+                <label for="taxibleIncome">Taxible Income: </label>
+                <input type="text"disabled id="taxibleIncome">
+                <button id="calculateBtn">CALCULATE</button>
+
+                <label for="taxvalue">Tax: </label>
+                <input type="text" disabled id="taxvalue">
+                <label for="netIncome">Net Income</label>
+                <input type="text" disabled id="netIncome">
                 
 
 

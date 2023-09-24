@@ -64,3 +64,12 @@ function getSpeedStatus(e){
     }
 
 }
+
+
+function calcPayee(){
+    let basicSalary = parseFloat(document.getElementById().value);
+    let allowances = parseFloat(document.getElementById().value);
+    let grossIncome = basicSalary + allowances;
+    let 
+    
+}
