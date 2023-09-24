@@ -13,22 +13,28 @@
         </header>
         <section>
             <h2>Student Grade Generator</h2>
-            <form action="" method="post">
+            
+            
+               
                 <fieldset>
-                   <legend>Marks</legend>
-                <label for="markstxt">Student's Marks</label>
-                <input id="markstxt" type="number" placeholder="Enter students marks">
-
-                <label for="gradetxt">Grade</label>
-                <input type="text" name="gradetxt" id="gradetxt">
-                </fieldset>
+                    <legend>Marks</legend>
+                 <label for="marks">Student's Marks</label>
+                 <input id="markstxt" name="marks" type="number"  min="0" max="100" placeholder="Enter students marks">
+ 
+                 <label for="grade">Grade</label>
+                 <input type="text" name="grade" disabled id="gradetxt">
+                 <button id="gradebtn"  type="submit">GRADE</button>
+                 
+                 
+                 </fieldset>
+              
 
                 
 
-            </form>
+          
         </section>
 
-        <script src="./index.js"></script>
+        <script type="text/javascript" src="index.js"></script>
 
     </body>
 </html>
