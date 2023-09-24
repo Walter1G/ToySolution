@@ -1,4 +1,5 @@
 const gradebtn = document.getElementById("gradebtn");
+const speedStatusbtn =document.getElementById("statusBtn");
 
 // Use an event listener to call assignGrade when the button is clicked
 gradebtn.addEventListener("click", assignGrade);
@@ -30,4 +31,10 @@ function assignGrade(e) {
 
     // Display the grade
     document.getElementById("gradetxt").value = `${grade}`;
+}
+
+//add event listener to call getSpeedstatus when the button is clicked
+
+function getSpeedStatus(e){
+
 }
