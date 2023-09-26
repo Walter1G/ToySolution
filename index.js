@@ -69,7 +69,7 @@ function getSpeedStatus(e){
 }
 
 
-
+//check if the button is null 
 if(getTaxBtn){
     getTaxBtn.addEventListener("click",calculateIncomeTax);
 } else{console.log("Button is still Null")}
@@ -77,11 +77,11 @@ if(getTaxBtn){
 
 
 function calculateIncomeTax(e) {
-    const income = parseFloat(document.getElementById("basicSalary").value); 
-    const deductions =  parseFloat(document.getElementById("benefitsSum").value);
+    const income = parseFloat(document.getElementById("basicSalary").value);  //get base income
+    const deductions =  parseFloat(document.getElementById("benefitsSum").value); //sum of all deductions
 
     
-
+    //case of the tax brackets
 
     const taxBrackets = [
         { lowerLimit: 0, upperLimit: 24000, rate: 0.10 },
@@ -115,9 +115,11 @@ function calculateIncomeTax(e) {
         tax += bracketTax;
     }
 
-    console.log(income);
-    console.log(deductions);
+    //console.log(income);
+    //console.log(deductions);
 
+
+    //display
     document.getElementById("taxibleIncome").value = income - deductions;
     document.getElementById("taxvalue").value = tax;
    document.getElementById("netIncome").value= income - deductions -tax;

@@ -12,7 +12,16 @@ The second interface takes in the speed of a car. If the speed does not exceed 7
 
 ## Challenge 3: Net Salary Calculator 
 
-The third interface, takes in users basic salary, allowances and benefits, and calculates the total net pay. It will also show the tax amount
+The third interface, takes in users basic salary, allowances and benefits, and calculates the total net pay. It will also show the tax amount.  the taxt bracket percentages are as below
+
+| 
+Monthly Taxable Pay (Ksh)      | Rate of Tax (%) |
+| :---        |    :----:   |     
+| Up to 24,000      | 10.0       | 
+| 24,001 - 32,333   | 25.0        | 
+| 32,334 - 500,000   | 30.0        | 
+| 500,001 - 800,000  | 32.0        | 
+| Above 800,000  | 35.0        | 
 
 
 
