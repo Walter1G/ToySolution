@@ -1,5 +1,8 @@
 const gradebtn = document.getElementById("gradebtn");
 const speedStatusbtn =document.getElementById("statusBtn");
+const getTaxBtn =document.getElementById("calculateBtn");
+
+
 
 // Use an event listener to call assignGrade when the button is clicked
 gradebtn.addEventListener("click", assignGrade);
@@ -66,10 +69,59 @@ function getSpeedStatus(e){
 }
 
 
-function calcPayee(){
-    let basicSalary = parseFloat(document.getElementById().value);
-    let allowances = parseFloat(document.getElementById().value);
-    let grossIncome = basicSalary + allowances;
-    let 
+
+if(getTaxBtn){
+    getTaxBtn.addEventListener("click",calculateIncomeTax);
+} else{console.log("Button is still Null")}
+
+
+
+function calculateIncomeTax(e) {
+    const income = parseFloat(document.getElementById("basicSalary").value); 
+    const deductions =  parseFloat(document.getElementById("benefitsSum").value);
+
+    
+
+
+    const taxBrackets = [
+        { lowerLimit: 0, upperLimit: 24000, rate: 0.10 },
+        { lowerLimit: 24001, upperLimit: 32333, rate: 0.25 },
+        { lowerLimit: 32334, upperLimit: 500000, rate: 0.30 },
+        { lowerLimit: 500001, upperLimit: 800000, rate: 0.32 },
+        { lowerLimit: 800001, upperLimit: Infinity, rate: 0.35 }
+    ];
+
+    // Calculate taxable income.
+    const taxableIncome = income - deductions;  //deductions include NHIF,NSSF
+
+    // Initialize the total tax.
+    let tax = 0;
+
+    // Calculate tax for each bracket.
+    for (const bracket of taxBrackets) {
+        if (taxableIncome <= 0) {
+            break; // No more taxable income to calculate.
+        }
+
+        // Calculate the portion of income in the current bracket.
+        const bracketIncome = Math.min(bracket.upperLimit, taxableIncome) - bracket.lowerLimit;
+
+        if (bracketIncome <= 0) {
+            continue; // Skip this bracket if no income falls in it.
+        }
+
+        // Calculate tax for the current bracket and add it to the total.
+        const bracketTax = bracketIncome * bracket.rate;
+        tax += bracketTax;
+    }
+
+    console.log(income);
+    console.log(deductions);
+
+    document.getElementById("taxibleIncome").value = income - deductions;
+    document.getElementById("taxvalue").value = tax;
+   document.getElementById("netIncome").value= income - deductions -tax;
+
     
 }
+
